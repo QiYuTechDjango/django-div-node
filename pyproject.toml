@@ -1,8 +1,9 @@
 [tool.poetry]
 name = "django-div-node"
-version = "0.1.0"
-description = ""
+version = "0.1.1"
+description = "HTML custom div node in django template"
 authors = ["dev <dev@qiyutech.tech>"]
+readme = "README.md"
 
 [[tool.poetry.source]]
 name = "aliyun"
