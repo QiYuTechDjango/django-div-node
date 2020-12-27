@@ -22,6 +22,18 @@ def custom_div_node_helper(name: str, parser: Parser, fn: Callable[[Context], bo
               这个函数的参数为: 模版的 Context
               True  -> 渲染子节点
               False -> 不需要渲染子节点
+
+    usage demo:
+
+        from django import template
+        register = template.Library()
+
+        @register.tag
+        def custom_node_name(parser, token):
+            def fn(ctx: Context) -> bool:
+                return True
+            return custom_div_node_helper("custom_node_name", parser, fn)
+
     """
     nodelist = parser.parse((f"end_{name}",))
     parser.delete_first_token()
