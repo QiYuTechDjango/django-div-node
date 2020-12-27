@@ -19,4 +19,4 @@ freeze:
 
 
 format:
-	poetry run black code
+	poetry run black django-div-node
