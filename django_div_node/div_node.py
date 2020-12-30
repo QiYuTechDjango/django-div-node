@@ -15,8 +15,10 @@ class DivNode(Node):
     def __init__(self, name: str, node_list: NodeList, fn: Callable[[Context], bool]):
         """
         :param name:  the name of the node [for debug and django inner use]
-        :param node_list: the inner node list [if `fn` return render it otherwise render nothing]
+        :param node_list: the inner node list
+                          [if `fn` return true then render the inner node otherwise render nothing]
         :param fn: the function to indicate if need render the inner code
+                   accept the `Context` as argument, return bool
         """
         self._name = name
         self._node_list = node_list
